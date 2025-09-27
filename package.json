@@ -12,6 +12,8 @@
     "@clerk/nextjs": "^6.32.2",
     "@typescript-eslint/eslint-plugin": "^8.44.1",
     "@typescript-eslint/parser": "^8.44.1",
+    "axios": "^1.12.2",
+    "cloudinary": "^2.7.0",
     "inngest": "^3.42.3",
     "mongoose": "^8.18.2",
     "next": "^15.5.4",

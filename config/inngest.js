@@ -3,7 +3,7 @@ import dbConnect from "./db";
 import User from "@/models/User";
 
 // Create a client to send and receive events
-export const inngest = new Inngest({ id: "shopy-next" });
+export const inngest = new Inngest({ id: "shopy" });
 
 // Inngest func to save user data to db
 export const syncUserCreation = inngest.createFunction(
@@ -21,8 +21,14 @@ export const syncUserCreation = inngest.createFunction(
             email: email_addresses[0].email_address,
             image_url: image_url
         }
+
+        console.log("Received event to create user:", event.data.id);
+        console.log("Preparing to save this data to MongoDB:", userData);
+
         await dbConnect();
         await User.create(userData);
+
+        console.log("Successfully saved user to database:", userData._id);
     }
 )  
 
