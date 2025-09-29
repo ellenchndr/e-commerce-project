@@ -19,7 +19,7 @@ async function dbConnect(){
             // defaultnya mongoose simpen smua query saat koneksi blm berhasil, tpi kita mau query lgsg fail kalau koneksi ga berhasil
             // jadi di false spy bisa debugging 
         }
-        cached.promise = mongoose.connect(`${process.env.MONGODB_URI}/quickcart`, opts).then(mongoose => {
+        cached.promise = mongoose.connect(process.env.MONGODB_URI, opts).then(mongoose => {
             return mongoose;
         })
     }
