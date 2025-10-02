@@ -8,11 +8,12 @@ export const inngest = new Inngest({ id: "shopy" });
 // Inngest func to save user data to db
 export const syncUserCreation = inngest.createFunction(
     {
-        id: 'sync-user-from-clerk'
+        id: 'shopy-next-sync-user-from-clerk'
     },
     {
         event: 'clerk/user.created',
     },
+    // https://inn.gs/e/-7uMBrn2B3JoAH6MEUSez7ER_LcfFmuobXbLn7seiYMeAa5NA1HxA8T3vrzMsoa89feBXO2vyk8HoWwu2wx62g/api/inngest
     async({event}) => {
         const {id, first_name, last_name, email_addresses, image_url} = event.data;
         const userData = {
