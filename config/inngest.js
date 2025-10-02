@@ -3,12 +3,12 @@ import dbConnect from "./db";
 import User from "@/models/User";
 
 // Create a client to send and receive events
-export const inngest = new Inngest({ id: "shopy" });
+export const inngest = new Inngest({ id: "shopy-next" });
 
 // Inngest func to save user data to db
 export const syncUserCreation = inngest.createFunction(
     {
-        id: 'shopy-next-sync-user-from-clerk'
+        id: 'sync-user-from-clerk'
     },
     {
         event: 'clerk/user.created',
